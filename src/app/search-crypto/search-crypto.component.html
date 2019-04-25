@@ -1,0 +1,18 @@
+<form #f="ngForm" class="offset-5 col-md-7 col-sm-7  d-flex justify-content-end" (submit)="searchCrypto()">
+
+  <label class="m-3 text-light">Crypto</label>
+<!-- TODO
+  Crypto icons , changes icons 
+-->
+  <select class="m-3 form-control form-control-sm" [style.height]="'60%'" name="cryptoInput" [(ngModel)]="cryptoInput" required>
+    <option name="cryptoOption" *ngFor="let cryptoOption of cryptos" [ngValue]="cryptoOption">{{cryptoOption}}</option>
+  </select>
+  
+  <label class="m-3 text-light">Change</label>
+
+  <select class="m-3 form-control form-control-sm" [style.height]="'60%'" name="changeInput" [(ngModel)]="changeInput" required>
+    <option name="changeOption" *ngFor="let changeOption of changes" [ngValue]="changeOption"><span class="text-center">{{changeOption}}</span></option>
+  </select>
+
+  <button class="btn text-light" [disabled]="f.invalid" [style.height]="'50px'"><i class="fas fa-search fa-2x"></i></button>
+</form>

@@ -1,0 +1,10 @@
+<div class="border-info mx-3">
+  <br>
+  <div class="text-center bg-light ">
+    <h3 class="bg-info px-2 py-3 text-light">{{market.market}}</h3>
+    <div class="py-3 text-info">
+      <p id="volume"> Volume : <strong>{{market.volume | number:".4"}}</strong></p> 
+      <p id="price">Price : <strong>{{market.price | slice:0:6}}</strong></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="bg-info" [style.height]="'10vh'">
+  <app-search-crypto class="row" (emitter)='getSearch($event)'></app-search-crypto>
+</div>
+<div class="text-center mt-3">
+  <div *ngIf="crypto; else search" class="pt-5">
+    <div class="bg-light pt-5">
+      <h2><strong>{{crypto.base}}</strong></h2><br><br>
+      <div class="row pb-5">
+        <div class="col-md-4">
+          <h3 id="price"><i class="fas fa-2x fa-money-bill-wave mb-5 text-info"></i><br>{{crypto.price | slice:0:7}}
+            {{crypto.target}}</h3>
+        </div>
+        <div class="col-md-4">
+          <h3 id="volume"><i class="fas fa-2x fa-layer-group mb-5 text-info"></i><br>{{crypto.volume | slice:0:10}}</h3>
+        </div>
+        <div class="col-md-4">
+          <h3 class="text-center" id="change"><i
+              class="fas fa-2x fa-random mb-5 text-info"></i><br>{{crypto.change | slice:0:6}}</h3>
+        </div>
+      </div>
+      <app-markets [markets]="crypto.markets"></app-markets>
+    </div>
+  </div>
+  <ng-template #search>
+    <h1 id="searchCrypto" class="text-center bg-light jumbotron pt-5 mt-5">Search a Crypto</h1>
+  </ng-template>
+</div>
+
+<span *ngIf="crypto; else fixed">
+  <footer class="bg-info">
+    <p class="text-center text-light">
+      Made By Gaëtan Thomas
+      <a href="https://github.com/GazzGazz">
+        <i class="fab fa-github fa-2x text-light mt-2"></i>
+      </a>
+    </p>
+  </footer>
+</span>
+<ng-template #fixed>
+  <footer class="bg-info fixed-bottom">
+    <p class="text-center text-light">
+      Made By Gaëtan Thomas
+      <a href="https://github.com/GazzGazz">
+        <i class="fab fa-github fa-2x text-light mt-2"></i>
+      </a>
+    </p>
+  </footer>
+</ng-template>

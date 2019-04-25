@@ -1,0 +1,8 @@
+<div class="bgOp pt-2 pb-4">
+  <h2 class="mt-4"><strong>Markets Available</strong></h2>
+  <app-chart [markets]="markets"></app-chart>
+  <div class="row p-5">
+      <app-market class="col-md-3 " *ngFor="let market of markets" [market]="market"></app-market>
+    </div>
+</div>
+
