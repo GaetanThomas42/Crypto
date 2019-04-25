@@ -4,7 +4,7 @@ Search and get global info on a cryptocurrency and his availability on different
 
 ![alt text](http://f.angiva.re/hqHX2)
  
-## Development server
+## Server
 
 Run `npm install` to install node modules.
 
